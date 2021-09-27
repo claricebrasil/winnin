@@ -1,5 +1,4 @@
 import React from "react";
-import logoReddit from '../../assets/reddit-logo-16.png'
 import './style.css';
 
 function Card({ author, title, hour, image, domain }) {
