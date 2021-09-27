@@ -11,20 +11,20 @@ function App() {
   const [next, setNext] = useState('');
   const [darkMode, setDarkMode] = useState(false);
 
-  async function getData() {
-    try {
-      const response = await api.get(`${search ? `${search}.json?after&limit=10` : ''}`);
-
-      const data = await response.data;
-
-      setResults(data.data.children);
-      setNext(data.data.after)
-    } catch (error) {
-       return(error);
-    }
-  }
-
   useEffect(() => {
+    async function getData() {
+      try {
+        const response = await api.get(`${search ? `${search}.json?after&limit=10` : ''}`);
+  
+        const data = await response.data;
+  
+        setResults(data.data.children);
+        setNext(data.data.after);
+        console.log(data.data.children);
+      } catch (error) {
+         return(error);
+      }
+    };
     getData();
   }, [search]);
 
