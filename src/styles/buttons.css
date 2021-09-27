@@ -1,0 +1,17 @@
+.btn-filter, .end-button {
+    background-color: #A7B0BE;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 11px 78px;
+    border: unset;
+    border-radius: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.btn-filter:focus, .end-button {
+    background-color: var(--color-primary);
+}

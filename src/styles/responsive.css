@@ -1,0 +1,30 @@
+@media screen and (min-width: 500px) and (max-width: 630px) {
+    header {
+        font-size: 20px;
+    }
+
+    .container {
+        font-size: 15px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .card-container > span, p {
+        font-size: 14px;
+    }
+
+    img {
+        width: 67px;
+        height: 67px;
+    }
+
+    .container-button {
+        max-width: 100%;
+    }
+
+    .btn-filter, .end-button {
+        padding: 5px 36px;
+    }
+}
