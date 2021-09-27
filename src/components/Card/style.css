@@ -1,7 +1,12 @@
 img {
     width: 77px;
     height: 77px;
+    font-size: 10px;
+    color: #fff;
+    background-color: #A7B0BE;
+    border-radius: 8px;
 }
+
 
 h3 {
     font-size: 20px;

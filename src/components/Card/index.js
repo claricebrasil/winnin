@@ -13,7 +13,7 @@ function Card({ author, title, hour, image, domain }) {
         <>
             <hr />
             <div className="flex-row my-lg">
-                <img src={logoReddit} alt="teste" />
+                <img src={image} alt="imagem post" />
                 <div className="card-container flex-column mx-md">
                     <h3>{title}</h3>
                     <p className="mb-md">enviado há {hours} {hours > 1 ? "horas" : "hora"} por <span className="author">{author}</span></p>

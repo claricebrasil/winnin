@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import Card from './components/Card/index';
-import ScrollTop from './components/Card/ScrollTop';
+import ScrollTop from './components/ScrollTop';
 import api from './services/api';
 import './styles/global.css';
 import { FiSun, FiMoon } from 'react-icons/fi';
@@ -36,6 +36,8 @@ function App() {
 
       setResults(data.data.children);
       setNext(data.data.after);
+
+      console.log(data.data.children);
     } catch (error) {
        return(error);
     };

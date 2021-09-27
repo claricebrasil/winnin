@@ -28,7 +28,7 @@
         max-width: 100%;
     }
 
-    .btn-filter, .end-button {
+    .btn-filter, .btn-filter-active .end-button {
         padding: 5px 36px;
     }
 
