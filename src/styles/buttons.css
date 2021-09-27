@@ -1,4 +1,4 @@
-.btn-filter, .end-button {
+.btn-filter, .btn-filter-active, .end-button {
     background-color: #A7B0BE;
     color: #fff;
     font-size: 20px;
@@ -12,6 +12,27 @@ button:hover {
     cursor: pointer;
 }
 
-.btn-filter:focus, .end-button {
+.btn-filter-active, .end-button {
     background-color: var(--color-primary);
+}
+
+.button-visible {
+    opacity: 100%;
+}
+
+.button-invisible {
+    opacity: 0%;
+}
+
+.scroll-button {
+    position: fixed;
+    top: 600px;
+    left: 1303px;
+    border: unset;
+}
+
+.FiArrowUpCircle {
+    width: 35px;
+    height: 35px;
+    color: var(--color-primary);
 }

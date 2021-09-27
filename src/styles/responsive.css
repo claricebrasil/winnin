@@ -1,7 +1,11 @@
-@media screen and (min-width: 500px) and (max-width: 630px) {
-    header {
-        font-size: 20px;
+@media screen and (max-width: 630px) {
+    .App {
+        position: relative;
     }
+
+    .dark-mode, .light-mode {
+       position: absolute;
+    };
 
     .container {
         font-size: 15px;
@@ -26,5 +30,12 @@
 
     .btn-filter, .end-button {
         padding: 5px 36px;
+    }
+
+    .scroll-button {
+        position: fixed;
+        top: 570px;
+        left: 550px;
+        border: unset;
     }
 }

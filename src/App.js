@@ -1,12 +1,15 @@
 import React, {useState, useEffect } from 'react';
 import Card from './components/Card/index';
+import ScrollTop from './components/Card/ScrollTop';
 import api from './services/api';
 import './styles/global.css';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
 function App() {
   const [results, setResults] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('hot');
   const [next, setNext] = useState('');
+  const [darkMode, setDarkMode] = useState(false);
 
   async function getData() {
     try {
@@ -37,32 +40,43 @@ function App() {
        return(error);
     };
   }
+
+  function handleDarkMode(e) {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  }
   
   return (
-    <div className="App">
+    <div className={darkMode ? "app-dark" : "App"}>
       <header>
         <h1>React
           <span>JS</span>
         </h1>
+        <div 
+          onClick={handleDarkMode} 
+          className={darkMode ? "light-mode" : "dark-mode"}
+        >
+          {darkMode ? <FiSun /> : <FiMoon />}
+        </div>
       </header>
       <div className="container flex-column">
         <div className="container-button flex-row content-center my-lg">
           <button
-            className="btn-filter" 
+            className={search === "hot" ? "btn-filter-active" : "btn-filter" }
             value="hot" 
             onClick={(e) => setSearch(e.target.value)}
           >
             Hot
           </button>
           <button
-            className="btn-filter" 
+            className={search === "new" ? "btn-filter-active" : "btn-filter"} 
             value="new" 
             onClick={(e) => setSearch(e.target.value)}
           >
             News
           </button>
           <button
-            className="btn-filter" 
+            className={search === "rising" ? "btn-filter-active" : "btn-filter"}  
             value="rising" 
             onClick={(e) => setSearch(e.target.value)}
           >
@@ -79,6 +93,7 @@ function App() {
               domain={result.data.domain}
             />
           )}
+        <ScrollTop />
         <button 
           className="end-button justify-end mb-lg" 
           onClick={handleShowMore}
