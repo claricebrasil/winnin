@@ -8,6 +8,10 @@
         width: 100%;
     };
 
+    .container {
+        width: 100%;
+    }
+
     .btn-filter, .btn-filter-active {
         width: 100px;
         padding: 10px;
