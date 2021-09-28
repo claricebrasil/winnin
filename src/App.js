@@ -20,7 +20,7 @@ function App() {
   
         setResults(data.data.children);
         setNext(data.data.after);
-        console.log(data.data.children);
+
       } catch (error) {
          return(error);
       }
@@ -91,7 +91,7 @@ function App() {
               author={result.data.author}
               title={result.data.title}
               hour={result.data.created}
-              image={result.data.url}
+              image={result.data.preview?.images[0]?.source.url.replaceAll('amp;','')}
               domain={result.data.domain}
             />
           )}
