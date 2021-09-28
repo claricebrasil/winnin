@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FiArrowUpCircle } from 'react-icons/fi';
 
 function ScrollTop() {
     const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +29,7 @@ function ScrollTop() {
     return (
         <div className={isVisible ? "button-visible" : "button-invisible"}>
             <button className="scroll-button" type="button" onClick={scrollToTop}>
-                <FiArrowUpCircle className="FiArrowUpCircle" />
+                ^
             </button>
         </div>
     );
