@@ -22,29 +22,3 @@
         position: absolute;
      };
 }
-
-@media screen and (max-width: 410px) {
-    img {
-        width: 47px;
-        height: 47px;
-    };
-
-    .container {
-        max-width: 100%;
-        margin: 0 57px;
-    }
-
-    .btn-filter, .btn-filter-active {
-        width: 60px;
-        padding: 10px;
-        font-size: 14px;
-    };
-
-    header {
-        position: relative;
-    }
-
-    .dark-mode, .light-mode {
-        position: absolute;
-     };
-};
