@@ -1,52 +1,57 @@
-@media screen and (max-width: 650px) {
-    .App {
+@media screen and (max-width: 410px) {
+    img {
+        width: 47px;
+        height: 47px;
+    };
+
+    .container {
+        max-width: 100%;
+        margin: 0 57px;
+    }
+
+    .btn-filter, .btn-filter-active {
+        width: 60px;
+        padding: 10px;
+        font-size: 14px;
+    };
+
+    header {
         position: relative;
     }
 
     .dark-mode, .light-mode {
-       position: absolute;
+        position: absolute;
+        left: 370px;
+     };
+
+    .scroll-button {
+        position: fixed;
+        top: 905px;
+        left: 390px;
+        border: unset;
+    };
+};
+
+@media screen and (max-width: 560px) {
+    img {
+        width: 57px;
+        height: 57px;
     };
 
-    .container {
-        font-size: 15px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-
-    .card-container > span, p {
-        font-size: 14px;
-    }
-
-    img {
-        width: 67px;
-        height: 67px;
-    }
-
-    .container-button {
-        max-width: 100%;
-    }
-
     .btn-filter, .btn-filter-active .end-button {
-        padding: 5px 36px;
-    }
+        padding: 5px 26px;
+    };
+
+    .dark-mode, .light-mode {
+        position: absolute;
+     };
 
     .scroll-button {
         position: fixed;
         top: 765px;
-        left: 570px;
+        left: 550px;
         border: unset;
-    }
-}
-
-@media screen and (min-width: 1235px) and (max-width: 1300px) {
-    .scroll-button {
-        position: fixed;
-        top: 750px;
-        left: 1238px;
-        border: unset;
-    }
+    };
 }
 
 @media screen and (min-width: 1120px) and (max-width: 1235px) {
@@ -56,7 +61,7 @@
         left: 1000px;
         border: unset;
     }
-}
+};
 
 @media screen and (min-width: 900px) and (max-width: 1120px) {
     .scroll-button {
@@ -65,7 +70,7 @@
         left: 890px;
         border: unset;
     }
-}
+};
 
 @media screen and (min-width: 650px) and (max-width: 900px) {
     .scroll-button {
@@ -74,4 +79,4 @@
         left: 650px;
         border: unset;
     }
-}
+};
