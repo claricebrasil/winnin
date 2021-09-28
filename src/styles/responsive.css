@@ -1,4 +1,4 @@
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 650px) {
     .App {
         position: relative;
     }
@@ -34,8 +34,44 @@
 
     .scroll-button {
         position: fixed;
-        top: 570px;
-        left: 550px;
+        top: 765px;
+        left: 570px;
+        border: unset;
+    }
+}
+
+@media screen and (min-width: 1235px) and (max-width: 1300px) {
+    .scroll-button {
+        position: fixed;
+        top: 750px;
+        left: 1238px;
+        border: unset;
+    }
+}
+
+@media screen and (min-width: 1120px) and (max-width: 1235px) {
+    .scroll-button {
+        position: fixed;
+        top: 750px;
+        left: 1000px;
+        border: unset;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1120px) {
+    .scroll-button {
+        position: fixed;
+        top: 750px;
+        left: 890px;
+        border: unset;
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 900px) {
+    .scroll-button {
+        position: fixed;
+        top: 750px;
+        left: 650px;
         border: unset;
     }
 }

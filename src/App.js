@@ -3,6 +3,7 @@ import Card from './components/Card/index';
 import ScrollTop from './components/ScrollTop';
 import api from './services/api';
 import './styles/global.css';
+import logoReddit from './assets/reddit-logo.png';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
 function App() {
@@ -91,7 +92,7 @@ function App() {
               author={result.data.author}
               title={result.data.title}
               hour={result.data.created}
-              image={result.data.preview?.images[0]?.source.url.replaceAll('amp;','')}
+              image={result.data.preview ? result.data.preview?.images[0]?.source.url.replaceAll('amp;','') : logoReddit}
               domain={result.data.domain}
             />
           )}
