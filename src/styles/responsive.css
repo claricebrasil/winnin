@@ -1,22 +1,60 @@
-
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 670px) {
     img {
         width: 57px;
         height: 57px;
     };
 
-    .btn-filter, .btn-filter-active .end-button {
+    header {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0 57px;
+        font-size: 16px;
+    }
+
+    .container h3 {
+        font-size: 18px;
+    }
+
+    .btn-filter, .btn-filter-active {
+        width: 100px;
+        padding: 10px;
+        font-size: 18px;
+    };
+    
+    .end-button {
         padding: 5px 26px;
     };
 
     .dark-mode, .light-mode {
         position: absolute;
      };
-
-    .scroll-button {
-        position: fixed;
-        top: 765px;
-        left: 550px;
-        border: unset;
-    };
 }
+
+@media screen and (max-width: 410px) {
+    img {
+        width: 47px;
+        height: 47px;
+    };
+
+    .container {
+        max-width: 100%;
+        margin: 0 57px;
+    }
+
+    .btn-filter, .btn-filter-active {
+        width: 60px;
+        padding: 10px;
+        font-size: 14px;
+    };
+
+    header {
+        position: relative;
+    }
+
+    .dark-mode, .light-mode {
+        position: absolute;
+     };
+};

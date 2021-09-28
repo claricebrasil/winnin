@@ -26,8 +26,8 @@ button:hover {
 
 .scroll-button {
     position: fixed;
-    top: 580px;
-    left: 1300px;
+    bottom: 90px;
+    right: 15px;
     border: unset;
     border-radius: 8px;
     width: 40px;

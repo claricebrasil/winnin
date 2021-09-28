@@ -45,10 +45,10 @@ body .app-dark h1 button {
 
 .dark-mode, .light-mode {
     position: absolute;
-    right: 50px;
+    right: 30px;
     top: 30px;
-    width: 35px;
-    height: 35px;
+    width: 33px;
+    height: 33px;
     padding: 5px;
     cursor: pointer;
     border-radius: 50%;
