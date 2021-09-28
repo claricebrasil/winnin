@@ -38,7 +38,6 @@ function App() {
       setResults(data.data.children);
       setNext(data.data.after);
 
-      console.log(data.data.children);
     } catch (error) {
        return(error);
     };

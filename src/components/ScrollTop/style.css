@@ -1,9 +1,9 @@
 .button-visible {
-    opacity: 100%;
+    opacity: 1.0;
 }
 
 .button-invisible {
-    opacity: 0%;
+    opacity: 0;
 }
 
 .scroll-button {
@@ -17,4 +17,8 @@
     color: #717780;
     font-size: 18px;
     font-weight: 700;
+}
+
+.arrow-up {
+    color: #6324C6;
 }
