@@ -96,13 +96,13 @@ function App() {
               domain={result.data.domain}
             />
           )}
-        <ScrollTop />
         <button 
           className="end-button justify-end mb-lg" 
           onClick={handleShowMore}
         >
           + Ver mais
         </button>
+        <ScrollTop />
       </div>
     </div>
   );

@@ -1,0 +1,20 @@
+.button-visible {
+    opacity: 100%;
+}
+
+.button-invisible {
+    opacity: 0%;
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 90px;
+    right: 15px;
+    border: unset;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    color: #717780;
+    font-size: 18px;
+    font-weight: 700;
+}
