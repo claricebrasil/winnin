@@ -1,37 +1,3 @@
-@media screen and (max-width: 410px) {
-    img {
-        width: 47px;
-        height: 47px;
-    };
-
-    .container {
-        max-width: 100%;
-        margin: 0 57px;
-    }
-
-    .btn-filter, .btn-filter-active {
-        width: 60px;
-        padding: 10px;
-        font-size: 14px;
-    };
-
-    header {
-        position: relative;
-    }
-
-    .dark-mode, .light-mode {
-        position: absolute;
-        left: 370px;
-     };
-
-    .scroll-button {
-        position: fixed;
-        top: 905px;
-        left: 390px;
-        border: unset;
-    };
-};
-
 @media screen and (max-width: 560px) {
     img {
         width: 57px;
@@ -79,4 +45,38 @@
         left: 650px;
         border: unset;
     }
+};
+
+@media screen and (max-width: 410px) {
+    img {
+        width: 47px;
+        height: 47px;
+    };
+
+    .container {
+        max-width: 100%;
+        margin: 0 57px;
+    }
+
+    .btn-filter, .btn-filter-active {
+        width: 60px;
+        padding: 10px;
+        font-size: 14px;
+    };
+
+    header {
+        position: relative;
+    }
+
+    .dark-mode, .light-mode {
+        position: absolute;
+        left: 370px;
+     };
+
+    .scroll-button {
+        position: fixed;
+        top: 905px;
+        left: 390px;
+        border: unset;
+    };
 };
