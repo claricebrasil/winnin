@@ -11,11 +11,11 @@
     .container {
         max-width: 100%;
         margin: 0 57px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .container h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .btn-filter, .btn-filter-active {
@@ -42,6 +42,11 @@
     .container {
         max-width: 100%;
         margin: 0 57px;
+        font-size: 12px;
+    }
+
+    .container h3 {
+        font-size: 14px;
     }
 
     .btn-filter, .btn-filter-active {
