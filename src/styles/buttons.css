@@ -29,10 +29,11 @@ button:hover {
     top: 600px;
     left: 1303px;
     border: unset;
+    background-color: unset;
 }
 
 .FiArrowUpCircle {
     width: 35px;
     height: 35px;
-    color: var(--color-primary);
+    color: black;
 }
