@@ -1,6 +1,9 @@
 import React, {useState, useEffect } from 'react';
 import Card from './components/Card/index';
 import ScrollTop from './components/ScrollTop';
+import Loading from './components/Loading';
+import ErrorMessaging from './components/ErrorMessaging';
+import useAuth from './hooks/useAuth';
 import api from './services/api';
 import './styles/global.css';
 import logoReddit from './assets/reddit-logo.png';
@@ -10,9 +13,18 @@ function App() {
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState('hot');
   const [next, setNext] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, setDarkMode } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
+    setDarkMode(false);
+  }, []);
+
+  useEffect(() => {
+    setLoading(true);
+    setError("");
+
     async function getData() {
       try {
         const response = await api.get(`${search ? `${search}.json?after&limit=10` : ''}`);
@@ -22,14 +34,19 @@ function App() {
         setResults(data.data.children);
         setNext(data.data.after);
 
+        setLoading(false);
       } catch (error) {
-         return(error);
+         setLoading(false);
+         setError(error.message);
       }
     };
     getData();
   }, [search]);
 
   async function handleShowMore() {
+    setLoading(true);
+    setError("");
+
     try {
       const response = await api.get(`${search}.json?after=${next}&limit=10`);
 
@@ -38,8 +55,10 @@ function App() {
       setResults(data.data.children);
       setNext(data.data.after);
 
+      setLoading(false);
     } catch (error) {
-       return(error);
+      setLoading(false);
+      setError(error.message);
     };
   }
 
@@ -50,7 +69,7 @@ function App() {
   
   return (
     <div className={darkMode ? "app-dark" : "App"}>
-      <header>
+      <header className="header-top">
         <h1>React
           <span>JS</span>
         </h1>
@@ -103,6 +122,8 @@ function App() {
           + Ver mais
         </button>
       </div>
+      <ErrorMessaging error={error} />
+      <Loading open={loading} />
     </div>
   );
 }
