@@ -1,29 +1,26 @@
 import React, {useState, useEffect } from 'react';
+import Header from './components/Header';
+import Button from './components/Button';
 import Card from './components/Card/index';
 import ScrollTop from './components/ScrollTop';
 import Loading from './components/Loading';
 import ErrorMessaging from './components/ErrorMessaging';
-import useAuth from './hooks/useAuth';
 import api from './services/api';
-import './styles/global.css';
+import { useLocalStorage } from './utils/useLocalStorage';
 import logoReddit from './assets/reddit-logo.png';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import './styles/global.css';
 
 function App() {
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState('hot');
   const [next, setNext] = useState('');
-  const { darkMode, setDarkMode } = useAuth();
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", "app-light");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    setDarkMode(false);
-  }, []);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setLoading(true);
-    setError("");
+    setError('');
 
     async function getData() {
       try {
@@ -45,7 +42,7 @@ function App() {
 
   async function handleShowMore() {
     setLoading(true);
-    setError("");
+    setError('');
 
     try {
       const response = await api.get(`${search}.json?after=${next}&limit=10`);
@@ -56,53 +53,36 @@ function App() {
       setNext(data.data.after);
 
       setLoading(false);
+      
     } catch (error) {
       setLoading(false);
       setError(error.message);
     };
   }
-
-  function handleDarkMode(e) {
-    e.preventDefault();
-    setDarkMode(!darkMode);
-  }
   
   return (
-    <div className={darkMode ? "app-dark" : "App"}>
-      <header className="header-top">
-        <h1>React
-          <span>JS</span>
-        </h1>
-        <div 
-          onClick={handleDarkMode} 
-          className={darkMode ? "light-mode" : "dark-mode"}
-        >
-          {darkMode ? <FiSun /> : <FiMoon />}
-        </div>
-      </header>
+    <div className={darkMode === "app-dark" ? "app-dark" : "app-light"}>
+      <Header 
+        darkMode={darkMode} 
+        setDarkMode={setDarkMode} 
+      />
       <div className="container flex-column">
         <div className="container-button flex-row content-center my-lg">
-          <button
-            className={search === "hot" ? "btn-filter-active" : "btn-filter" }
+          <Button 
             value="hot" 
-            onClick={(e) => setSearch(e.target.value)}
-          >
-            Hot
-          </button>
-          <button
-            className={search === "new" ? "btn-filter-active" : "btn-filter"} 
+            search={search} 
+            setSearch={setSearch}
+          />
+          <Button 
             value="new" 
-            onClick={(e) => setSearch(e.target.value)}
-          >
-            News
-          </button>
-          <button
-            className={search === "rising" ? "btn-filter-active" : "btn-filter"}  
+            search={search} 
+            setSearch={setSearch} 
+          />
+          <Button 
             value="rising" 
-            onClick={(e) => setSearch(e.target.value)}
-          >
-            Rising
-          </button>
+            search={search} 
+            setSearch={setSearch} 
+          />
         </div>
           {results.map((result) =>
             <Card

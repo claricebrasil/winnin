@@ -11,7 +11,7 @@ function Card({ author, title, hour, image, domain }) {
     return (
         <>
             <hr />
-            <div className="flex-row my-lg">
+            <div className="card flex-row my-lg">
                 <img src={image} alt="imagem post" />
                 <div className="card-container flex-column mx-md">
                     <h3>{title}</h3>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FiArrowUp } from 'react-icons/fi'
 
 function ScrollTop() {
     const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +30,7 @@ function ScrollTop() {
     return (
         <div className={isVisible ? "button-visible" : "button-invisible"}>
             <button className="scroll-button" type="button" onClick={scrollToTop}>
-                ^
+                <FiArrowUp className="arrow-up" />
             </button>
         </div>
     );
