@@ -1,4 +1,4 @@
-@media screen and (max-width: 670px) {
+@media only screen and (max-width: 640px) {
     img {
         width: 57px;
         height: 57px;
@@ -9,7 +9,7 @@
     }
 
     .container {
-        width: 80%;
+        width: 91%;
     }
 
     .btn-filter, .btn-filter-active {
@@ -25,4 +25,19 @@
     .dark-mode, .light-mode {
         position: absolute;
      }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    body {
+        min-width: 1600px;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .container {
+        width: 92%;
+    }
 }
