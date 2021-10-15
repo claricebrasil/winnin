@@ -1,16 +1,12 @@
 import React, {useState, useEffect } from 'react';
-import Header from './components/Header';
-import Button from './components/Button';
-import Card from './components/Card/index';
-import ScrollTop from './components/ScrollTop';
-import Loading from './components/Loading';
-import ErrorMessaging from './components/ErrorMessaging';
+import { Header, Button, Card, ScrollTop, Loading, ErrorMessaging } from './components/index';
 import api from './services/api';
 import { useLocalStorage } from './utils/useLocalStorage';
 import logoReddit from './assets/reddit-logo.png';
 import './styles/global.css';
 
 function App() {
+
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState('hot');
   const [next, setNext] = useState('');
@@ -25,7 +21,6 @@ function App() {
     async function getData() {
       try {
         const response = await api.get(`${search ? `${search}.json?after&limit=10` : ''}`);
-  
         const data = await response.data;
   
         setResults(data.data.children);
@@ -46,11 +41,10 @@ function App() {
 
     try {
       const response = await api.get(`${search}.json?after=${next}&limit=10`);
-
       const data = await response.data;
 
-      setResults(data.data.children);
       setNext(data.data.after);
+      setResults(results.concat(data.data.children));
 
       setLoading(false);
       
@@ -84,16 +78,18 @@ function App() {
             setSearch={setSearch} 
           />
         </div>
-          {results.map((result) =>
-            <Card
-              key={result.data.id}
-              author={result.data.author}
-              title={result.data.title}
-              hour={result.data.created}
-              image={result.data.preview ? result.data.preview?.images[0]?.source.url.replaceAll('amp;','') : logoReddit}
-              domain={result.data.domain}
-            />
-          )}
+          {
+            results.map((result) =>
+              <Card
+                key={result.data.id}
+                author={result.data.author}
+                title={result.data.title}
+                hour={result.data.created}
+                image={result.data.preview ? result.data.preview?.images[0]?.source.url.replaceAll('amp;','') : logoReddit}
+                domain={result.data.domain}
+              />
+            )
+          }
         <ScrollTop />
         <button 
           className="end-button justify-end mb-lg" 

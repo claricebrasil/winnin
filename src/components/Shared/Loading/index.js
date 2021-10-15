@@ -3,7 +3,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import useStyles from "./style";
 
-export default function Carregando({ open }) {
+export default function Loading({ open }) {
   const classes = useStyles();
 
   return (

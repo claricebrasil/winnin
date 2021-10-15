@@ -11,5 +11,5 @@ export default function Button({ search, setSearch, value }) {
     {value === "new" && "News"}
     {value === "rising" && "Rising"}
     </button>
-  );
+  )
 }
